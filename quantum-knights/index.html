@@ -370,6 +370,29 @@ header {
   font-size: 11px;
 }
 
+/* ── IMAGE GRID ── */
+.img-grid {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 4px;
+}
+
+.img-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.img-grid.cols-1 { grid-template-columns: 1fr; }
+
+.img-grid img {
+  width: 100%;
+  display: block;
+  border: 0.5px solid var(--rule);
+}
+
+.img-grid figcaption {
+  font-size: 10px;
+  color: var(--ink-3);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
 /* ── FOOTER ── */
 footer {
   border-top: 0.5px solid var(--rule);
@@ -561,6 +584,16 @@ footer {
         </ul>
       </div>
     </div>
+    <div class="img-grid cols-2" style="margin-top:18px;">
+      <figure>
+        <img src="img/QK_dungeon_module_01.png" alt="필드 던전 모듈 예시">
+        <figcaption>필드 던전 모듈 구성 예시</figcaption>
+      </figure>
+      <figure>
+        <img src="img/QK_dungeon_doc.png" alt="필드 던전 모듈 기획서">
+        <figcaption>필드 던전 모듈 기획서</figcaption>
+      </figure>
+    </div>
   </div>
 
   <!-- TASK 02 -->
@@ -593,6 +626,22 @@ footer {
         </ul>
       </div>
     </div>
+    <div class="img-grid cols-1" style="margin-top:18px;">
+      <figure>
+        <img src="img/QK_openworld_01.png" alt="퀀텀나이츠 오픈월드 작업 예시">
+        <figcaption>오픈월드 레벨 작업 예시</figcaption>
+      </figure>
+    </div>
+    <div class="img-grid cols-2" style="margin-top:8px;">
+      <figure>
+        <img src="img/QK_rift_process.png" alt="시공의 틈 작업 과정">
+        <figcaption>시공의 틈 콘텐츠 작업 과정</figcaption>
+      </figure>
+      <figure>
+        <img src="img/QK_convoy_process.png" alt="호송 콘텐츠 작업 과정">
+        <figcaption>호송 콘텐츠 작업 과정</figcaption>
+      </figure>
+    </div>
   </div>
 
   <!-- TASK 03 -->
@@ -623,6 +672,12 @@ footer {
           <li>레벨 디자이너로서 시스템 기획 문서까지 커버하며 콘텐츠 기획 전반에 대한 이해도 입증</li>
         </ul>
       </div>
+    </div>
+    <div class="img-grid cols-1" style="margin-top:18px;">
+      <figure>
+        <img src="img/QK_pvp_doc.png" alt="PVP 모드 기획서">
+        <figcaption>PVP 라운드 매치 모드 상세 기획서</figcaption>
+      </figure>
     </div>
   </div>
 
