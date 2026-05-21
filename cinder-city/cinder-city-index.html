@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>신더시티 — 김진형 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=block" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:   #181818;
+  --ink-2: #555;
+  --ink-3: #999;
+  --rule:  #e0ddd8;
+  --bg:    #f9f8f6;
+  --tag:   #edeae4;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 32px 60px;
+}
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 36px 0 14px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 36px;
+}
+
+.h-name {
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.h-name .en {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink-2);
+  margin-left: 10px;
+}
+
+.h-badge {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.h-nav {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+}
+
+.h-nav a {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+}
+
+.h-nav a:hover { color: var(--ink); }
+.h-nav a.active { color: var(--ink); }
+
+.h-contact {
+  font-size: 12px;
+  color: var(--ink-2);
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* ── BACK ── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+  margin-bottom: 28px;
+}
+
+.back-link::before { content: "←"; font-size: 11px; }
+.back-link:hover { color: var(--ink); }
+
+/* ── PROJECT HERO ── */
+.project-hero {
+  margin-bottom: 36px;
+}
+
+.project-hero-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.hero-num {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--ink-3);
+}
+
+.hero-co {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.hero-period {
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.hero-title {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.hero-title .en {
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--ink-2);
+  margin-left: 8px;
+}
+
+.hero-role {
+  font-size: 11px;
+  color: var(--ink-2);
+  margin-bottom: 14px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.tag {
+  font-size: 10px;
+  color: var(--ink-3);
+  background: var(--tag);
+  padding: 1px 7px;
+  border-radius: 2px;
+}
+
+/* ── OVERVIEW IMAGE ── */
+.overview-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  border: 0.5px solid var(--rule);
+  margin-bottom: 8px;
+}
+
+.img-caption {
+  font-size: 10px;
+  color: var(--ink-3);
+  margin-bottom: 36px;
+}
+
+/* ── VIDEO ── */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-bottom: 8px;
+  background: #000;
+}
+
+.video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ── SECTION ── */
+.section {
+  margin-bottom: 40px;
+  padding-top: 28px;
+  border-top: 0.5px solid var(--rule);
+}
+
+.section-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 16px;
+}
+
+/* ── OVERVIEW GRID ── */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-bottom: 20px;
+}
+
+.ov-item {
+  padding: 14px 0;
+  border-top: 0.5px solid var(--rule);
+  border-right: 0.5px solid var(--rule);
+  padding-right: 16px;
+}
+
+.ov-item:last-child { border-right: none; }
+.ov-item:nth-child(n+2) { padding-left: 16px; }
+
+.ov-key {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 5px;
+}
+
+.ov-val {
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ── TASK BLOCK ── */
+.task-block {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 0.5px dashed var(--rule);
+}
+
+.task-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.task-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.task-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+}
+
+/* ── STAR ── */
+.star {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0 12px;
+}
+
+.star-key {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border-top: 0.5px solid var(--rule);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.star-val {
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.65;
+  border-top: 0.5px solid var(--rule);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.star-val ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.star-val ul li::before {
+  content: "—";
+  color: var(--ink-3);
+  margin-right: 6px;
+  font-size: 11px;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 0.5px solid var(--rule);
+  padding-top: 14px;
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-q {
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.footer-d {
+  font-size: 10px;
+  color: var(--ink-3);
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<header>
+  <div>
+    <div class="h-name">김진형<span class="en">Kim Jin Hyeong</span></div>
+    <div class="h-badge">Level Designer · Portfolio</div>
+  </div>
+  <div>
+    <nav class="h-nav">
+      <a href="../index.html" class="active">Works</a>
+      <a href="mailto:wlsgud9065@gmail.com">Contact</a>
+    </nav>
+    <div class="h-contact">wlsgud9065@gmail.com &nbsp;·&nbsp; 010-8702-2449</div>
+  </div>
+</header>
+
+<a class="back-link" href="../index.html">All Projects</a>
+
+<!-- HERO -->
+<div class="project-hero">
+  <div class="project-hero-meta">
+    <span class="hero-num">01</span>
+    <span class="hero-co">빅파이어게임즈 / NC</span>
+    <span class="hero-period">2024.01 — 현재</span>
+  </div>
+  <div class="hero-title">신더시티<span class="en">Cinder City</span></div>
+  <div class="hero-role">레벨 인티그레이션 팀 · 팀장 · Unreal Engine 5</div>
+  <div class="hero-tags">
+    <span class="tag">선형 레벨 디자인</span>
+    <span class="tag">실내 탐색형 레벨</span>
+    <span class="tag">레일 슈터</span>
+    <span class="tag">시나리오 연출</span>
+    <span class="tag">IO 설계</span>
+    <span class="tag">팀 리드</span>
+    <span class="tag">Unreal Engine 5</span>
+  </div>
+</div>
+
+<!-- OVERVIEW IMAGE -->
+<img class="overview-img" src="img/cindercity_img_02.jpg" alt="신더시티 Cinder City">
+<div class="img-caption">PC/Console TPS MMORPG — 현대 서울을 배경으로 한 신더시티</div>
+
+<!-- TRAILER VIDEO -->
+<div class="section">
+  <div class="section-label">Official Trailer</div>
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/Kf_fnpAH6DI"
+      title="신더시티 트레일러"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="img-caption" style="margin-top:8px;">Cinder City Official Trailer</div>
+</div>
+
+<!-- GAMEPLAY VIDEO -->
+<div class="section">
+  <div class="section-label">Gameplay</div>
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/DWuEXWlPlh8"
+      title="신더시티 게임플레이"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="img-caption" style="margin-top:8px;">Cinder City Gameplay</div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section">
+  <div class="section-label">Project Overview</div>
+  <div class="overview-grid">
+    <div class="ov-item">
+      <div class="ov-key">Studio</div>
+      <div class="ov-val">빅파이어게임즈<br>/ NC</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-key">Period</div>
+      <div class="ov-val">2024.01<br>— 현재</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-key">Role</div>
+      <div class="ov-val">레벨 인티그레이션<br>팀장</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-key">Engine</div>
+      <div class="ov-val">Unreal<br>Engine 5</div>
+    </div>
+  </div>
+  <p style="font-size:13px; color:var(--ink-2); line-height:1.8;">
+    신더시티는 현대 한국 서울을 배경으로 한 PC/콘솔 TPS MMORPG입니다. 레벨 인티그레이션 팀장으로서 팀 운영과 카운터파트 협업 조율을 담당하는 동시에, 게임의 첫인상을 결정하는 프롤로그 콘텐츠를 단독 오너로 기획·구현했습니다. Gamescom 2025(독일), 엔비디아 게임 페스티벌, 지스타 출품 빌드에 포함되어 대외 시연에 성공했습니다.
+  </p>
+</div>
+
+<!-- TASK 01 -->
+<div class="section">
+  <div class="section-label">Work Details</div>
+
+  <div class="task-block">
+    <div class="task-title">
+      <span class="task-num">01</span>
+      프롤로그 오너 — 약 50분 분량 선형 레일 슈터 콘텐츠 개발 전담 리드
+    </div>
+    <div class="star">
+      <div class="star-key">Situation</div>
+      <div class="star-val">
+        게임의 첫인상을 결정하는 프롤로그 콘텐츠가 전무한 상태였습니다. 플레이어가 장르·세계관·전투 감각을 자연스럽게 학습하면서도 강렬한 첫 경험을 가질 수 있는 약 50분 분량의 선형 콘텐츠가 필요했고, 이 콘텐츠의 기획·구현 전체를 홀로 책임지는 '오너' 역할을 맡게 되었습니다.
+      </div>
+
+      <div class="star-key">Task</div>
+      <div class="star-val">
+        <ul>
+          <li>시나리오·시네마틱 연출 방향 수립부터 실제 레벨 구현까지 전 과정 단독 리드</li>
+          <li>서울 실제 지형(삼성역·코엑스·SM타운·별마당 도서관 일대)을 바탕으로 한 외부 선형 구간(A파트) 4개 섹션 설계</li>
+          <li>탐색-전투-내러티브가 결합된 실내 다층 건물 레벨(B파트, 3층→5층→2층→보스방) 설계</li>
+        </ul>
+      </div>
+
+      <div class="star-key">Action</div>
+      <div class="star-val">
+        <strong>A파트 — 외부 선형 구간</strong>
+        <ul>
+          <li>실제 삼성역 코엑스 지형을 레퍼런스로 삼아 플레이어 동선 설계. 순찰 루트 분기와 IO를 배치하여 단순 이동 구간에도 선택과 발견의 재미 부여</li>
+          <li>별마당 도서관 구간: 전력 발전기 파괴 → 경로 개방의 환경 퍼즐 설계</li>
+          <li>초기 문제점 발견 및 개선: 400m 직선 도보 6분 구간의 긴장감 부재를 플레이 테스트에서 식별, 동선 재설계 및 IO 밀도 재배치로 개선</li>
+        </ul>
+        <br>
+        <strong>B파트 — 실내 다층 건물 레벨</strong>
+        <ul>
+          <li>바이오테크 연구시설 배경, 3층→4층→5층→2층→보스방으로 이어지는 비선형 수직 탐색 구조 설계</li>
+          <li>서버실 열쇠 → 전자식 잠금장치 해제 → 챔버 접근 등 체이닝된 오브젝트 의존 구조로 유기적 탐색 유도</li>
+          <li>보스방: 계단식 진입 후 보스 등장, 좁은 공간에서의 긴장감 있는 전투 클라이맥스 구현</li>
+        </ul>
+      </div>
+
+      <div class="star-key">Result</div>
+      <div class="star-val">
+        <ul>
+          <li>Gamescom 2025(독일), 엔비디아 게임 페스티벌, 지스타 출품 빌드에 프롤로그 콘텐츠 포함 — 대외 시연 성공</li>
+          <li>아웃도어 선형 전투(A파트)와 실내 탐색·전투(B파트)를 함께 설계하여 신더시티 프롤로그 전투 공간의 기초 문법 확립</li>
+          <li>시나리오 기획부터 레벨 구현·시네마틱 연출까지 전 과정을 단독으로 완수</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TASK 02 -->
+  <div class="task-block">
+    <div class="task-title">
+      <span class="task-num">02</span>
+      레벨 인티그레이션 팀 팀장 — 조직 운영 및 카운터파트 협업 조율
+    </div>
+    <div class="star">
+      <div class="star-key">Situation</div>
+      <div class="star-val">
+        팀장 취임 시점에 다수의 카운터파트 팀(아트, 시스템 기획, 프로그래밍, 사운드)과 동시에 협업해야 하는 구조였고, 업무 우선순위와 커뮤니케이션 채널이 정돈되지 않아 개발 속도가 지체되는 상황이었습니다.
+      </div>
+
+      <div class="star-key">Action</div>
+      <div class="star-val">
+        <ul>
+          <li>주간 싱크 미팅 구조화: 카운터파트 팀별 의존성 이슈 사전 취합 및 우선순위 결정 체계 수립</li>
+          <li>팀원별 강점 파악 후 업무 배분, 경력 목표에 맞는 과제 부여</li>
+          <li>JIRA 티켓 기준 진행 상태 가시화로 인식 차이 최소화</li>
+          <li>콘텐츠 제작 노하우 문서화 및 팀 내 공유</li>
+        </ul>
+      </div>
+
+      <div class="star-key">Result</div>
+      <div class="star-val">
+        <ul>
+          <li>카운터파트 협업 병목 지점을 사전 식별·해소하는 루틴 확립</li>
+          <li>Gamescom 2025 등 대외 출품 마감에 맞춘 일정 관리 성공</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-q">"공간의 긴장감과 탐험의 쾌감을 치밀하게 설계하는 레벨 디자이너"</span>
+  <span class="footer-d">Updated 2026</span>
+</footer>
+
+</div>
+</body>
+</html>
