@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김진형 — Level Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=block" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* 모든 요소에 단일 폰트 강제 적용 */
+html, body, div, span, p, h1, h2, h3, h4, h5, h6,
+ul, li, header, footer, section, article,
+em, strong, b, i {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic',
+               'NanumGothic', sans-serif !important;
+  font-style: normal !important;
+}
+
+:root {
+  --ink:   #181818;
+  --ink-2: #555;
+  --ink-3: #999;
+  --rule:  #e0ddd8;
+  --bg:    #f9f8f6;
+  --tag:   #edeae4;
+  --left:  144px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 800px;
+  margin: 28px auto;
+  padding: 0 32px;
+}
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 18px;
+}
+
+.h-name {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.h-name .en {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink-2);
+  letter-spacing: -0.01em;
+  margin-left: 8px;
+}
+
+.h-badge {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.h-contact {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--ink-2);
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* ── ROW LAYOUT ── */
+.row {
+  display: grid;
+  grid-template-columns: var(--left) 1fr;
+  gap: 0 24px;
+  margin-bottom: 15px;
+}
+
+.row-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-top: 3px;
+}
+
+hr.div {
+  border: none;
+  border-top: 0.5px solid var(--rule);
+  margin: 0 0 15px;
+}
+
+/* ── SUMMARY ── */
+.intro {
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.chip-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.chip-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+
+.chip {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--ink-2);
+  background: white;
+  border: 0.5px solid var(--rule);
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+/* ── EXPERIENCE ── */
+.exps { display: flex; flex-direction: column; }
+
+.exp {
+  padding: 11px 0;
+  border-bottom: 0.5px solid var(--rule);
+}
+.exp:first-child { padding-top: 0; }
+.exp:last-child { border-bottom: none; padding-bottom: 0; }
+
+.exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+.exp-co {
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.exp-period {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+.exp-role {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 1px;
+}
+
+.exp-product {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--ink-3);
+  margin-bottom: 8px;
+}
+
+.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 7px;
+}
+
+.bullets li {
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  gap: 0 8px;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.48;
+}
+
+.bk {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-2);
+  padding-top: 1px;
+}
+
+.award {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--ink-2);
+  border-left: 1.5px solid var(--ink);
+  padding-left: 8px;
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 3px; }
+.tag {
+  font-size: 10.5px;
+  font-weight: 400;
+  color: var(--ink-3);
+  background: var(--tag);
+  padding: 1px 7px;
+  border-radius: 2px;
+}
+
+/* ── EDU & MILITARY ── */
+.meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.meta-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 4px;
+}
+
+.meta-title  { font-size: 13px; font-weight: 700; color: var(--ink); }
+.meta-sub    { font-size: 11.5px; font-weight: 400; color: var(--ink-2); margin-top: 2px; }
+.meta-detail { font-size: 11.5px; font-weight: 400; color: var(--ink-3); line-height: 1.6; margin-top: 3px; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 0.5px solid var(--rule);
+  padding-top: 9px;
+  margin-top: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-q {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+.footer-d {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+/* ── PRINT ── */
+@media print {
+  @page { size: A4; margin: 8mm 11mm; }
+  body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { margin: 0; padding: 0; max-width: 100%; }
+  .task-block { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="h-info">
+      <div class="h-name">김진형<span class="en">Kim Jin Hyeong</span></div>
+      <div class="h-badge">Level Designer · 8 Years</div>
+    </div>
+    <div class="h-contact">
+      wlsgud9065@gmail.com<br>
+      010-8702-2449<br>
+      성남시 분당구
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <div class="row">
+    <div class="row-label">소개</div>
+    <div>
+      <p class="intro">
+        모바일 MMORPG부터 PC·Console TPS 오픈월드까지 다양한 플랫폼과 장르에서 레벨을 설계하고 팀을 이끌어온 기획자입니다. 18명 규모 팀 운영과 유관 조직 협업을 리드한 경험이 있으며, 액션 RPG·슈터 장르의 헤비 게이머로서 플레이어 동선·공간 긴장감·전투 리듬을 레벨 설계에 직접 반영합니다.
+      </p>
+      <div class="chip-row">
+        <span class="chip-label">액션 RPG</span>
+        <div class="chips">
+          <span class="chip">엘든링</span>
+          <span class="chip">P의 거짓</span>
+          <span class="chip">다크소울 시리즈</span>
+          <span class="chip">퍼스트 버서커: 카잔</span>
+          <span class="chip">몬스터헌터 시리즈</span>
+          <span class="chip">아머드코어6</span>
+        </div>
+      </div>
+      <div class="chip-row">
+        <span class="chip-label">슈터</span>
+        <div class="chips">
+          <span class="chip">아크레이더스</span>
+          <span class="chip">워해머 40K: 스페이스마린2</span>
+          <span class="chip">램넌트2</span>
+          <span class="chip">데스티니 가디언즈</span>
+          <span class="chip">헬다이버즈2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <!-- EXPERIENCE -->
+  <div class="row">
+    <div class="row-label">경력</div>
+    <div class="exps">
+
+      <div class="exp">
+        <div class="exp-top">
+          <div class="exp-co">빅파이어게임즈 / NC</div>
+          <div class="exp-period">2024.01 — 현재</div>
+        </div>
+        <div class="exp-role">레벨 인티그레이션 팀 · 팀장</div>
+        <div class="exp-product">PC/Console TPS MMORPG — 신더시티 (Cinder City)</div>
+        <ul class="bullets">
+          <li><span class="bk">프롤로그 오너</span><span>50분 분량 선형 레일 슈터 콘텐츠 개발 전담 리드 (시나리오·시네마틱 포함)</span></li>
+          <li><span class="bk">파이프라인</span><span>오픈월드 콘텐츠 제작·인터랙션 오브젝트 제작 파이프라인 구축</span></li>
+          <li><span class="bk">레벨 디자인</span><span>오픈월드 인카운터 이벤트용 실내 건물 레벨 기획·구현</span></li>
+          <li><span class="bk">조직 관리</span><span>카운터파트 팀 협업 조율 및 파트 인력 매니지먼트</span></li>
+        </ul>
+        <div class="award">🏆 독일 게임스컴(Gamescom) 2025 · 엔비디아 게임 페스티벌 · 지스타 출품</div>
+        <div class="tags">
+          <span class="tag">Unreal Engine 5</span>
+          <span class="tag">JIRA</span>
+          <span class="tag">Perforce</span>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-top">
+          <div class="exp-co">스페이스다이브게임즈 / LINE</div>
+          <div class="exp-period">2021.09 — 2023.12</div>
+        </div>
+        <div class="exp-role">레벨 디자인 팀 · 파트장</div>
+        <div class="exp-product">PC TPS MMORPG — 퀀텀나이츠 (Quantum Knights)</div>
+        <ul class="bullets">
+          <li><span class="bk">오픈월드 총괄</span><span>4km × 4km 규모 레벨 디자인 총괄 (랜드스케이프 목업 → 그레이박싱)</span></li>
+          <li><span class="bk">대규모 관리</span><span>미션 50종 · 필드 던전 100종 제작 관리 총괄, 오픈월드 콘텐츠 5종 기획</span></li>
+          <li><span class="bk">시스템 기획</span><span>PVP 라운드 매치 시스템 기획 및 퀘스트 툴 개선</span></li>
+          <li><span class="bk">BP 기믹</span><span>상호작용 액터 · 트랩 · 이동형 플랫폼 등 Blueprint 직접 제작</span></li>
+        </ul>
+        <div class="award">🏆 Steam Next Fest 데모 플레이 빌드 출품 및 공개 성공</div>
+        <div class="tags">
+          <span class="tag">Unreal Engine 4/5</span>
+          <span class="tag">Blueprint</span>
+          <span class="tag">JIRA</span>
+          <span class="tag">Perforce</span>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="exp-top">
+          <div class="exp-co">넥서스 / Netmarble</div>
+          <div class="exp-period">2018.08 — 2021.08</div>
+        </div>
+        <div class="exp-role">레벨 디자인 팀 · 팀원</div>
+        <div class="exp-product">모바일 수집형 MMORPG — 세븐나이츠2 (Seven Knights 2)</div>
+        <ul class="bullets">
+          <li><span class="bk">콘텐츠 설계</span><span>4인 던전 · 성장 던전 · 방치형 모험 등 핵심 PvE 공간 설계</span></li>
+          <li><span class="bk">코어 시스템</span><span>세이브 포인트 · 공간 차폐 볼륨 · NavAreaClass 기반 자동 이동 시스템 기획</span></li>
+        </ul>
+        <div class="award">🏆 시즌 1 시나리오 최초 완성 · 구글 플레이 최고 매출 2위 기여 · 지스타 2018 출품</div>
+        <div class="tags">
+          <span class="tag">Unreal Engine 4</span>
+          <span class="tag">JIRA</span>
+          <span class="tag">Confluence</span>
+          <span class="tag">Perforce</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <!-- EDU & MILITARY -->
+  <div class="row">
+    <div class="row-label">학력 · 병역</div>
+    <div class="meta-grid">
+      <div>
+        <div class="meta-label">학력</div>
+        <div class="meta-title">동의대학교 게임공학과 학사</div>
+        <div class="meta-sub">2011.03 — 2017.02</div>
+        <div class="meta-detail">학점 4.2 / 4.5 · 게임 제작 동아리 운영 · 인디 게임 기획 및 출시 경험</div>
+      </div>
+      <div>
+        <div class="meta-label">병역</div>
+        <div class="meta-title">육군 병장 만기제대</div>
+        <div class="meta-sub">2012.03 — 2013.12</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-q">"공간의 긴장감과 탐험의 쾌감을 치밀하게 설계하는 레벨 디자이너"</span>
+    <span class="footer-d">Updated 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
