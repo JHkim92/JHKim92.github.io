@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세븐나이츠2 — 김진형 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=block" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:   #181818;
+  --ink-2: #555;
+  --ink-3: #999;
+  --rule:  #e0ddd8;
+  --bg:    #f9f8f6;
+  --tag:   #edeae4;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 32px 60px;
+}
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 36px 0 14px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 36px;
+}
+
+.h-name {
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.h-name .en {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink-2);
+  margin-left: 10px;
+}
+
+.h-badge {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.h-nav {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+}
+
+.h-nav a {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+}
+
+.h-nav a:hover { color: var(--ink); }
+
+.h-contact {
+  font-size: 12px;
+  color: var(--ink-2);
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* ── BACK ── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+  margin-bottom: 28px;
+}
+
+.back-link::before { content: "←"; font-size: 11px; }
+.back-link:hover { color: var(--ink); }
+
+/* ── PROJECT HERO ── */
+.project-hero { margin-bottom: 36px; }
+
+.project-hero-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.hero-num {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--ink-3);
+}
+
+.hero-co {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.hero-period {
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.hero-title {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.hero-title .en {
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--ink-2);
+  margin-left: 8px;
+}
+
+.hero-role {
+  font-size: 11px;
+  color: var(--ink-2);
+  margin-bottom: 14px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.tag {
+  font-size: 10px;
+  color: var(--ink-3);
+  background: var(--tag);
+  padding: 1px 7px;
+  border-radius: 2px;
+}
+
+/* ── VIDEO ── */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-bottom: 8px;
+  background: #000;
+}
+
+.video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.img-caption {
+  font-size: 10px;
+  color: var(--ink-3);
+  margin-bottom: 8px;
+}
+
+/* ── SECTION ── */
+.section {
+  margin-bottom: 40px;
+  padding-top: 28px;
+  border-top: 0.5px solid var(--rule);
+}
+
+.section-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 16px;
+}
+
+/* ── OVERVIEW GRID ── */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-bottom: 20px;
+}
+
+.ov-item {
+  padding: 14px 0;
+  border-top: 0.5px solid var(--rule);
+  border-right: 0.5px solid var(--rule);
+  padding-right: 16px;
+}
+
+.ov-item:last-child { border-right: none; }
+.ov-item:nth-child(n+2) { padding-left: 16px; }
+
+.ov-key {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 5px;
+}
+
+.ov-val {
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ── SUMMARY ── */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+}
+
+.summary-col-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.summary-list li {
+  font-size: 12.5px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  padding-left: 14px;
+  position: relative;
+}
+
+.summary-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--ink-3);
+  font-size: 11px;
+}
+
+/* ── TASK BLOCK ── */
+.task-block {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 0.5px dashed var(--rule);
+}
+
+.task-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.task-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.task-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+}
+
+/* ── STAR ── */
+.star {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0 12px;
+}
+
+.star-key {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border-top: 0.5px solid var(--rule);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.star-val {
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.65;
+  border-top: 0.5px solid var(--rule);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.star-val ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.star-val ul li::before {
+  content: "—";
+  color: var(--ink-3);
+  margin-right: 6px;
+  font-size: 11px;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 0.5px solid var(--rule);
+  padding-top: 14px;
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-q { font-size: 12px; color: var(--ink-3); }
+.footer-d { font-size: 10px; color: var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<header>
+  <div>
+    <div class="h-name">김진형<span class="en">Kim Jin Hyeong</span></div>
+    <div class="h-badge">Level Designer · Portfolio</div>
+  </div>
+  <div>
+    <nav class="h-nav">
+      <a href="../index.html">Works</a>
+      <a href="mailto:wlsgud9065@gmail.com">Contact</a>
+    </nav>
+    <div class="h-contact">wlsgud9065@gmail.com &nbsp;·&nbsp; 010-8702-2449</div>
+  </div>
+</header>
+
+<a class="back-link" href="../index.html">All Projects</a>
+
+<!-- HERO -->
+<div class="project-hero">
+  <div class="project-hero-meta">
+    <span class="hero-num">03</span>
+    <span class="hero-co">넥서스 / Netmarble</span>
+    <span class="hero-period">2018.08 — 2021.08</span>
+  </div>
+  <div class="hero-title">세븐나이츠2<span class="en">Seven Knights 2</span></div>
+  <div class="hero-role">레벨 디자인 팀 · 팀원 · Unreal Engine 4</div>
+  <div class="hero-tags">
+    <span class="tag">던전 레벨 디자인</span>
+    <span class="tag">시스템 기획</span>
+    <span class="tag">Unreal Engine 4</span>
+    <span class="tag">Blueprint</span>
+    <span class="tag">JIRA</span>
+    <span class="tag">Confluence</span>
+  </div>
+</div>
+
+<!-- BANNER IMAGE -->
+<img src="img/SK2_img_01.jpg" alt="세븐나이츠2 Seven Knights 2" style="width:100%; display:block; border:0.5px solid var(--rule); margin-bottom:8px;">
+<div class="img-caption">모바일 수집형 MMORPG — 세븐나이츠2</div>
+
+<!-- TRAILER VIDEO -->
+<div class="section" style="border-top:none; padding-top:0;">
+  <div class="section-label">Official Trailer</div>
+  <div class="video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/kk3frYsiXVA"
+      title="세븐나이츠2 트레일러"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="img-caption" style="margin-top:8px;">Seven Knights 2 Official Trailer</div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section">
+  <div class="section-label">Project Overview</div>
+  <div class="overview-grid">
+    <div class="ov-item">
+      <div class="ov-key">Studio</div>
+      <div class="ov-val">넥서스<br>/ Netmarble</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-key">Period</div>
+      <div class="ov-val">2018.08<br>— 2021.08</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-key">Role</div>
+      <div class="ov-val">레벨 디자인<br>팀원</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-key">Engine</div>
+      <div class="ov-val">Unreal<br>Engine 4</div>
+    </div>
+  </div>
+  <p style="font-size:13px; color:var(--ink-2); line-height:1.8;">
+    세븐나이츠2는 모바일 수집형 MMORPG로, 4인 파티 던전·성장 던전·방치형 모험 등 핵심 PvE 공간을 설계하는 역할을 맡았습니다. 레벨 설계와 밀접하게 연결된 인게임 시스템(저장·이동·연출)에 대한 기획 규칙을 직접 수립하고, Netmarble Wiki에 팀 내 레벨 제작 표준을 문서화했습니다. 구글 플레이 최고 매출 2위, 지스타 2020 출품.
+  </p>
+</div>
+
+<!-- SUMMARY -->
+<div class="section">
+  <div class="section-label">Summary of My Work</div>
+  <div class="summary-grid">
+
+    <div>
+      <div class="summary-col-title">As a Level Designer</div>
+      <ul class="summary-list">
+        <li>4인 파티 던전 레벨 설계 — 몬스터 배치·퀘스트 볼륨·NPC·BOSS 레이어별 구조화</li>
+        <li>DataTable(ActAction·ActEvent·Speech) 연동 구조로 기획서 작성</li>
+        <li>성장 던전·방치형 모험 — 짧은 루프와 명확한 보상 동선 설계</li>
+        <li>시즌 1 시나리오 최초 완성</li>
+        <li>UE4에서 레벨 배치·퀘스트 트리거·시네마틱 연결까지 직접 구현</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="summary-col-title">As a System Planner</div>
+      <ul class="summary-list">
+        <li>게임 저장 규칙 및 세이브 포인트 기획 — 던전 내 저장 가능 구간·예외 상황 규칙화</li>
+        <li>공간 차폐 볼륨(BlockVolume) 활성/비활성 트리거 규칙 기획</li>
+        <li>시퀀스 출력 전용 액터 및 예외처리 규칙 수립 (시네마틱 재생 중 캐릭터 제어·스킬 차단)</li>
+        <li>NavAreaClass 기반 자동 이동 규칙 설계</li>
+        <li>Netmarble Wiki에 SK2 언리얼 가이드 문서 직접 작성·관리</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- WORK DETAILS -->
+<div class="section">
+  <div class="section-label">Work Details</div>
+
+  <!-- TASK 01 -->
+  <div class="task-block">
+    <div class="task-title">
+      <span class="task-num">01</span>
+      던전 레벨 설계 — 4인 파티 던전 · 성장 던전 · 방치형 모험
+    </div>
+    <div class="star">
+      <div class="star-key">Situation</div>
+      <div class="star-val">
+        세븐나이츠2는 수집형 모바일 MMORPG로, 게임의 성장 구조에 맞는 다양한 PvE 공간을 공급해야 했습니다. 팀원으로 합류하여 핵심 던전 콘텐츠를 설계하는 역할을 맡았고, 레벨 구성에 필요한 시스템 규칙도 함께 수립해야 했습니다.
+      </div>
+
+      <div class="star-key">Task</div>
+      <div class="star-val">
+        던전 레벨 설계의 품질과 생산성을 확보하는 동시에, 레벨 구성에 필요한 시스템 규칙(세이브 포인트·공간 차폐·자동 이동·시퀀스 연출)을 기획하고 팀 내 공유 가이드로 문서화하는 것이 목표였습니다.
+      </div>
+
+      <div class="star-key">Action</div>
+      <div class="star-val">
+        <strong>던전 레벨 설계</strong>
+        <ul>
+          <li>4인 파티 던전: 몬스터 배치·퀘스트 볼륨·블록 볼륨·NPC·BOSS를 레이어별로 구조화하고, DataTable(ActAction·ActEvent·Speech) 연동 구조로 기획서 작성</li>
+          <li>성장 던전·방치형 모험: 플레이어 반복 접속을 고려한 짧은 루프와 명확한 보상 동선 설계. 시즌 1 시나리오 최초 완성</li>
+          <li>UE4에서 레벨 배치·퀘스트 트리거·시네마틱 연결까지 직접 구현하며 기획-구현 일체형 작업 수행</li>
+        </ul>
+        <br>
+        <strong>콘텐츠 연계 시스템 기획</strong>
+        <ul>
+          <li>게임 저장 규칙 및 세이브 포인트: 던전 내 저장 가능 구간과 예외 상황(전투 중·시네마틱 재생 중)을 규칙화하여 일관된 저장 경험 설계</li>
+          <li>공간 차폐 볼륨: 플레이어 동선을 제어하기 위한 BlockVolume 활성/비활성 트리거 규칙 기획</li>
+          <li>시퀀스 출력 전용 액터 및 예외처리: 시네마틱 재생 중 캐릭터 제어·스킬 차단·카메라 전환 등 예외 상황별 처리 규칙 수립</li>
+          <li>NavAreaClass 기반 자동 이동 규칙: LMDynamic NavModifierVolume을 활용한 구간별 자동 이동 온/오프 설계</li>
+        </ul>
+      </div>
+
+      <div class="star-key">Result</div>
+      <div class="star-val">
+        <ul>
+          <li>시즌 1 시나리오 최초 완성 · 구글 플레이 최고 매출 2위 기여 · 지스타 2020 출품</li>
+          <li>기획-구현 일체형 작업을 3년간 수행하며 UE4 실무 역량과 콘텐츠 시스템 기획 역량 동시 축적</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TASK 02 -->
+  <div class="task-block">
+    <div class="task-title">
+      <span class="task-num">02</span>
+      위키 가이드 작성 및 관리 — 팀 내 레벨 제작 표준 문서화
+    </div>
+    <div class="star">
+      <div class="star-key">Situation</div>
+      <div class="star-val">
+        레벨 제작 방식이 제작자마다 달라 품질 편차가 발생했고, 신규 인력 온보딩 시 구두로 노하우를 전달하는 데 한계가 있었습니다.
+      </div>
+
+      <div class="star-key">Action</div>
+      <div class="star-val">
+        <ul>
+          <li>Netmarble Wiki에 SK2 언리얼 가이드 문서를 직접 작성·관리</li>
+          <li>Level World Outliner Rule, Stage 세팅 가이드, Act Action/Event Data, 언리얼 액터 가이드(LMDynamic NavModifierVolume 등) 항목 집필</li>
+          <li>팀 내 레벨 제작 표준을 문서화하여 신규 인력 온보딩 및 작업 품질 일관성 확보에 기여</li>
+        </ul>
+      </div>
+
+      <div class="star-key">Result</div>
+      <div class="star-val">
+        <ul>
+          <li>시스템 기획 규칙 문서화로 팀 내 레벨 제작 기준 정립</li>
+          <li>이후 콘텐츠 제작 시 재사용 가능한 가이드 자산으로 활용</li>
+          <li>신규 팀원 온보딩 시간 단축 및 제작자 간 품질 편차 감소</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-q">"공간의 긴장감과 탐험의 쾌감을 치밀하게 설계하는 레벨 디자이너"</span>
+  <span class="footer-d">Updated 2026</span>
+</footer>
+
+</div>
+</body>
+</html>
