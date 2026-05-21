@@ -332,6 +332,47 @@ header {
   font-size: 11px;
 }
 
+/* ── SUMMARY ── */
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+}
+
+.summary-col-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.summary-list li {
+  font-size: 12.5px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  padding-left: 14px;
+  position: relative;
+}
+
+.summary-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--ink-3);
+  font-size: 11px;
+}
+
 /* ── FOOTER ── */
 footer {
   border-top: 0.5px solid var(--rule);
@@ -449,6 +490,38 @@ footer {
   <p style="font-size:13px; color:var(--ink-2); line-height:1.8;">
     신더시티는 현대 한국 서울을 배경으로 한 PC/콘솔 TPS MMORPG입니다. 레벨 인티그레이션 팀장으로서 팀 운영과 카운터파트 협업 조율을 담당하는 동시에, 게임의 첫인상을 결정하는 프롤로그 콘텐츠를 단독 오너로 기획·구현했습니다. Gamescom 2025(독일), 엔비디아 게임 페스티벌, 지스타 출품 빌드에 포함되어 대외 시연에 성공했습니다.
   </p>
+</div>
+
+<!-- SUMMARY -->
+<div class="section">
+  <div class="section-label">Summary of My Work</div>
+  <div class="summary-grid">
+
+    <div>
+      <div class="summary-col-title">As a Level Designer (프롤로그 오너)</div>
+      <ul class="summary-list">
+        <li>프롤로그 콘텐츠 기획·구현 전 과정 단독 리드</li>
+        <li>서울 실제 지형(삼성역·코엑스·별마당 일대) 레퍼런스 조사 및 동선 설계</li>
+        <li>외부 선형 구간(A파트) 4개 섹션 — 순찰 분기, IO 배치, 환경 퍼즐 설계</li>
+        <li>실내 다층 건물 레벨(B파트) — 비선형 수직 탐색 구조 및 오브젝트 체이닝 설계</li>
+        <li>시나리오·시네마틱 연출 방향 수립 및 언리얼 엔진 직접 구현</li>
+        <li>플레이 테스트를 통한 문제점 자가 진단 및 동선·IO 밀도 개선</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="summary-col-title">As a Team Lead (팀장)</div>
+      <ul class="summary-list">
+        <li>아트·시스템 기획·프로그래밍·사운드 등 다수 카운터파트 팀과 협업 체계 구축</li>
+        <li>주간 싱크 미팅 구조화 — 의존성 이슈 사전 취합 및 우선순위 결정</li>
+        <li>팀원별 강점 기반 업무 배분 및 경력 목표 연계 과제 부여</li>
+        <li>JIRA 기반 진행 상태 가시화로 팀 내 인식 차이 최소화</li>
+        <li>콘텐츠 제작 노하우 문서화 및 팀 내 공유</li>
+        <li>Gamescom 2025 등 대외 출품 마감 일정 관리 성공</li>
+      </ul>
+    </div>
+
+  </div>
 </div>
 
 <!-- TASK 01 -->
