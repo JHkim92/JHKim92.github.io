@@ -359,10 +359,8 @@ footer {
 /* ── PRINT ── */
 @media print {
   @page { size: A4; margin: 10mm 12mm; }
-  body { background: white; }
+  body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .page { margin: 0; padding: 0; max-width: 100%; }
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
   .task-block { page-break-inside: avoid; }
 }
 </style>
